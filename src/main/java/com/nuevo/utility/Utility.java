@@ -10,7 +10,7 @@ public class Utility {
 
 	public  String encryptionPassword(String password)
 	{
-		String passwordToHash = password;
+		String passwordToHash = password; 
 		String generatedPassword = null;
 		try {
 			// Create MessageDigest instance for MD5

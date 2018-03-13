@@ -55,7 +55,7 @@ public class User {
 		this.message = message;
 	}
 	
-	public User() {
+	public User() { 
 
 	}
 

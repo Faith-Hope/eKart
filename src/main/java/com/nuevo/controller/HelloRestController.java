@@ -23,7 +23,7 @@ import com.nuevo.utility.Utility;
 public class HelloRestController {
 	@Autowired
 	UserService userService;
-	@Autowired 
+	@Autowired  
 	Utility utility;
 	
 	@RequestMapping("/login")

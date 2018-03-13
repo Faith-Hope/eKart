@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Utility {
-
+	
 	public  String encryptionPassword(String password)
 	{
 		String passwordToHash = password; 

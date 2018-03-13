@@ -7,5 +7,5 @@ import com.nuevo.entity.User;
 
 public interface UserRep extends JpaRepository<User, Long> {
 
-	 //User findByEmail(String email);
+	//User findByEmail(String email);
 }

@@ -62,7 +62,7 @@ public class User {
 	public User(String username, String message) {
 		this.username = username;
 		this.message = message;
-	} 
+	}
 	
 }
 

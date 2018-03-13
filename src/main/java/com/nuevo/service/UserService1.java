@@ -13,6 +13,5 @@ public class UserService1 {
 	public void saveUser(User user) {
 		userRep.save(user);
 	}
-	 
-	
+	 	
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.nuevo.entity.User;
 
-
 @Service
 public class UserService  {
 	@Autowired

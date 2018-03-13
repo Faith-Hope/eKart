@@ -34,7 +34,7 @@ public class HelloRestController {
 		String generatedPassword=utility.encryptionPassword(password);
 		String message=userService.findbyName(username,generatedPassword);
 		return new User(username,message);
-	}
+	} 
 
 	/*@RequestMapping(value="/user/",method=RequestMethod.GET)
 	public ResponseEntity<User> getUser(@RequestBody User user)

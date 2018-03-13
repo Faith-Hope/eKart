@@ -15,7 +15,7 @@ public class Utility {
 		try {
 			// Create MessageDigest instance for MD5
 			MessageDigest md = MessageDigest.getInstance("MD5");
-			//Add password bytes to digest
+			//Add password bytes to digest 
 			md.update(passwordToHash.getBytes());
 			//Get the hash's bytes 
 			byte[] bytes = md.digest();

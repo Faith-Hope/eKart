@@ -11,6 +11,17 @@ public class UserService {
 	@Autowired
 	private UserRep userRep;
 	
+	public String findbyName(String username, String password) {
+
+		UserDetails user = userRep.findByUsernameAndPassword(username, password);
+		if (user != null) { 
+			return "welcome to ekart ";
+		} else {
+			return "Incorrect password please try again";
+		}
+	}
+	
+	
 	public UserDetails saveUser(UserDetails user) {
 		return userRep.save(user);
 	}

@@ -1,11 +1,15 @@
 package com.nuevo.repository;
 
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.nuevo.entity.User;
+import com.nuevo.entity.UserDetails;
 
-public interface UserRep extends JpaRepository<User, Long> {
+@Repository
+public interface UserRep extends JpaRepository<UserDetails, Long> {
 
 //User findByEmail(String email);
+	 UserDetails findByUsernameAndPassword(String username, String password);
+	 UserDetails findByEmail(String email);
+	 UserDetails save(UserDetails user);
 }

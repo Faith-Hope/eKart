@@ -9,7 +9,7 @@ import com.nuevo.entity.UserDetails;
 public interface UserRep extends JpaRepository<UserDetails, Long> {
 
 //User findByEmail(String email);
-	 UserDetails findByUsernameAndPassword(String username, String password);
+	 public UserDetails findByUsernameAndPassword(String username, String password);
 	 UserDetails findByEmail(String email);
 	 UserDetails save(UserDetails user);
 }

@@ -7,22 +7,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nuevo.entity.UserDetails;
 import com.nuevo.repository.UserRep;
+import com.nuevo.service.UserService;
 import com.nuevo.utility.Utility;
 
 @RestController
 public class HelloRestController {
 	@Autowired
-	UserRep userService;
+	UserService userService;
 	@Autowired
 	Utility utility;
+	@Autowired
+	UserRep userRep;
 
 	@RequestMapping("/userLogin")
 	public UserDetails getUser(@RequestBody UserDetails user) {
 		String username = user.getUsername();
 		String password = user.getPassword();
 		String generatedPassword = utility.encryptionPassword(password);
-		UserDetails currentUser = userService.findByUsernameAndPassword(username, generatedPassword);
-		return currentUser;
+		String message = userService.findbyName(username, generatedPassword);
+		return new UserDetails(username, message);
 	}
 
 	/*
@@ -47,9 +50,9 @@ public class HelloRestController {
 		String email = user.getEmail();
 		String generatedPassword = utility.encryptionPassword(password);
 		user.setPassword(generatedPassword);
-		UserDetails currentUser = userService.findByEmail(email);
+		UserDetails currentUser = userRep.findByEmail(email);
 		if(currentUser!=null) {
-			userService.save(currentUser);
+			userRep.save(currentUser);
 		}
 		return currentUser;
 	}
